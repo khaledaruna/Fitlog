@@ -3,9 +3,10 @@ import { Inter, Oswald } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import ToasterProvider from "@/components/workouts/ToasterProvider";
-import Navbar from "@/components/layout/Navbar"
+import Navbar from "@/components/layout/Navbar";
 import { WorkoutProvider } from "@/context/WorkoutContext";
-import Footer from "@/components/layout/Footer"
+import Footer from "@/components/layout/Footer";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
