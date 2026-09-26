@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Oswald } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
-import ToasterProvider from "@/components/workouts/ToasterProvider";
+import ToasterProvider from "@/components/ToasterProvider";
 import Navbar from "@/components/layout/Navbar";
 import { WorkoutProvider } from "@/context/WorkoutContext";
 import Footer from "@/components/layout/Footer";

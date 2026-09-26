@@ -34,7 +34,7 @@ const Hero = () => {
         {/* Hero Image */}
         <div className="flex w-full justify-center lg:w-auto">
           <Image
-            src="/assets/images/banner.png"
+            src="/images/banner.png"
             alt="Athlete training in the gym"
             width={334}
             height={334}
