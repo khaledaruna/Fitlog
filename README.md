@@ -1,36 +1,331 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FitLog — Workout Library
 
-## Getting Started
 
-First, run the development server:
+[**Live Demo**](https://fitlog-fit.vercel.app) · [**Source Code**](https://github.com/khaledaruna/fitlog)
+
+
+## About FitLog
+
+**FitLog** is a workout library and personal training planner built around a simple workflow:
+
+**discover → review → plan → complete**
+
+Users can explore workouts, open detailed exercise guides, build a daily routine, save workouts for later, track workout totals, and keep their selections available across page refreshes.
+
+The interface follows a focused dark fitness aesthetic and is fully responsive across mobile, tablet, and desktop devices.
+
+---
+
+## What You Can Do
+
+| Feature      
+
+---
+
+PHASE 1
+│
+├── Next.js setup
+├── Tailwind
+├── DaisyUI
+├── Lucide
+└── Sonner
+        ↓
+PHASE 2
+│
+├── Layout
+├── Navbar
+└── Footer
+        ↓
+PHASE 3
+│
+├── API
+├── TypeScript type
+├── Home
+└── Loading
+        ↓
+PHASE 4
+│
+├── Workout Card
+├── Library
+└── Sort
+        ↓
+PHASE 5
+│
+├── Dynamic route
+├── Details
+├── Specs
+└── Instructions
+        ↓
+PHASE 6
+│
+├── Context
+├── Today's Plan
+├── Saved
+└── Counters
+        ↓
+PHASE 7
+│
+├── Toast
+├── Remove
+├── Mark Done
+└── LocalStorage
+        ↓
+PHASE 8
+│
+├── 404
+├── Responsive
+├── README
+└── Deployment
+---
+
+## Core Experience
+
+### Workout Library
+
+The main library presents all available workouts in a responsive card layout.
+
+Each workout includes:
+
+- Exercise image
+- Muscle group tags
+- Workout name
+- Required equipment
+- Duration
+- Calories burned
+- Rating
+
+A live search field allows users to quickly filter workouts by **name** or **muscle group**.
+
+### Workout Details
+
+Every workout has its own dynamic details page with:
+
+- Description
+- Target muscle groups
+- Equipment
+- Difficulty
+- Sets and repetitions
+- Duration
+- Calories
+- Rating
+- Step-by-step instructions
+
+From the details page, a workout can be added to **Today's Plan** or **Saved for Later**.
+
+### Today's Plan
+
+Today's Plan is built for focused daily training.
+
+Users can:
+
+- Add up to **5 workouts**
+- View live workout totals
+- Sort the current plan
+- Mark exercises as done
+- Open workout details
+- Remove exercises from the plan
+
+Once five workouts have been added, the plan is locked until an existing workout is removed.
+
+### Saved Workouts
+
+The Saved section acts as a personal exercise collection.
+
+Users can:
+
+- Save workouts independently from Today's Plan
+- Store multiple workouts without a daily limit
+- Sort saved exercises
+- Open workout details
+- Remove saved workouts
+- View statistics for the active collection
+
+---
+
+## Thoughtful UX
+
+FitLog includes a number of smaller details that make the overall experience feel complete:
+
+- Active navigation states
+- Live Plan and Saved counters
+- Duplicate workout prevention
+- Disabled states for already-added workouts
+- Five-workout plan limit
+- Completed workout states
+- Toast notifications
+- Search empty state
+- Plan and Saved empty states
+- Loading indicators and skeletons
+- Custom error interface
+- Custom 404 page
+- Smooth scroll behavior
+- Scroll-to-top control
+- Persistent client state
+
+---
+
+## Tech Stack
+
+| Technology          | Role                                          |
+| ------------------- | --------------------------------------------- |
+| **Next.js 16**      | App Router, rendering, routing, data fetching |
+| **React 19**        | Component architecture and interactivity      |
+| **TypeScript**      | Type-safe application development             |
+| **Tailwind CSS 4**  | Responsive styling                            |
+| **DaisyUI**         | Tailwind utility components                   |
+| **Lucide React**    | Interface icons                               |
+| **React Hot Toast** | Action feedback and notifications             |
+| **Local Storage**   | Persistent workout state                      |
+| **Vercel**          | Deployment                                    |
+
+---
+
+## Routes
+
+| Route                | Description                |
+| -------------------- | -------------------------- |
+| `/`                  | Workout library            |
+| `/workouts/[id]`     | Individual workout details |
+| `/my-plan?tab=plan`  | Today's Plan               |
+| `/my-plan?tab=saved` | Saved Workouts             |
+
+Invalid routes and unavailable workout IDs are handled through a dedicated Not Found experience.
+
+---
+
+## Project Structure
+
+```text
+src/
+├── app/
+│   ├── my-plan/
+│   │   ├── loading.tsx
+│   │   └── page.tsx
+│   │
+│   ├── workouts/
+│   │   └── [id]/
+│   │       ├── loading.tsx
+│   │       └── page.tsx
+│   │
+│   ├── error.tsx
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── not-found.tsx
+│   └── page.tsx
+│
+├── components/
+│   ├── home/
+│   ├── layout/
+│   ├── my-plan/
+│   └── workouts/
+│
+├── context/
+│   └── WorkoutContext.tsx
+│
+├── lib/
+│   └── api.ts
+│
+└── types/
+    └── workout.ts
+```
+
+---
+
+## Data Source
+
+Workout data is loaded from the FitLog API.
+
+**All workouts**
+
+```text
+https://api.abcz.workers.dev/api/fitlog
+```
+
+**Single workout**
+
+```text
+https://api.abcz.workers.dev/api/fitlog/:id
+```
+
+---
+
+## State Management
+
+Workout state is managed through React Context and persisted in Local Storage.
+
+The application keeps track of:
+
+```text
+plan
+saved
+completedIds
+```
+
+This allows users to refresh or revisit the app without losing their current workout selections.
+
+---
+
+## Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/khaledaruna/fitlog.git
+```
+
+Enter the project:
+
+```bash
+cd fitlog
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Command         | Purpose                      |
+| --------------- | ---------------------------- |
+| `npm run dev`   | Start the development server |
+| `npm run lint`  | Run ESLint                   |
+| `npm run build` | Create a production build    |
+| `npm run start` | Run the production build     |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Responsive Layout
 
-## Deploy on Vercel
+| Device      | Experience                                   |
+| ----------- | -------------------------------------------- |
+| **Mobile**  | Single-column, touch-friendly layout         |
+| **Tablet**  | Balanced multi-column interface              |
+| **Desktop** | Expanded workout grid and planning dashboard |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Every major part of the application—including navigation, cards, workout details, tabs, statistics, actions, empty states, and footer—is responsive.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+<div align="center">
+
+### Train with intent. Log every set.
+
+[**Open FitLog →**](https://fitlog-fit.vercel.app)
+
+</div>
