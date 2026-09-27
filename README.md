@@ -1,7 +1,13 @@
-# FitLog — Workout Library
+# FitLog 
 
+### Workout Library & Personal Training Planner
 
-[**Live Demo**](https://fitlog-fit.vercel.app) · [**Source Code**](https://github.com/khaledaruna/fitlog)
+FitLog is a responsive workout library and
+daily workout planning application.
+
+[**Live Demo**](https://fitlog-seven-beta.vercel.app) · 
+
+[**Source Code**](https://github.com/khaledaruna/fitlog)
 
 
 ## About FitLog
@@ -18,66 +24,63 @@ The interface follows a focused dark fitness aesthetic and is fully responsive a
 
 ## What You Can Do
 
-| Feature      
+** Feature/Structure
 
+```text
+
+├── **Phase 1
+│   ├── Next.js setup
+│   ├── Tailwind
+│   ├── DaisyUi
+|   ├── Lucide
+│   ├── Sonner
+│   │
+├── **Phase 2
+│   ├── Layout
+│   ├── Navbar
+│   ├── Footer
+|   ├── Lucide
+│
+├── **Phase 3
+│   ├── Api
+│   ├── Typescript type
+│   ├── home
+|   ├── Loading
+│  
+│
+├── **Phase 4
+│   ├── Without Card
+│   ├── Library
+│   ├── sort
+│
+├── **Phase 5
+│   ├── Dynamic Route
+│   ├── Details
+│   ├── Specs
+|   ├── Instructions
+│
+├── **Phase 6
+│   ├── Context
+│   ├── Today's Plan
+│   ├── Saved
+|   ├── Counters
+│  
+│
+├── **Phase 7
+│   ├── Toast
+│   ├── Remove
+│   ├── Mark Done
+│   ├── LocalStorage
+│  
+│
+├── **Phase 8
+│   ├── 404
+│   ├── Respon sive
+│   ├── README
+│   ├── Deployment
+│
+```
 ---
-
-PHASE 1
-│
-├── Next.js setup
-├── Tailwind
-├── DaisyUI
-├── Lucide
-└── Sonner
-        ↓
-PHASE 2
-│
-├── Layout
-├── Navbar
-└── Footer
-        ↓
-PHASE 3
-│
-├── API
-├── TypeScript type
-├── Home
-└── Loading
-        ↓
-PHASE 4
-│
-├── Workout Card
-├── Library
-└── Sort
-        ↓
-PHASE 5
-│
-├── Dynamic route
-├── Details
-├── Specs
-└── Instructions
-        ↓
-PHASE 6
-│
-├── Context
-├── Today's Plan
-├── Saved
-└── Counters
-        ↓
-PHASE 7
-│
-├── Toast
-├── Remove
-├── Mark Done
-└── LocalStorage
-        ↓
-PHASE 8
-│
-├── 404
-├── Responsive
-├── README
-└── Deployment
----
-
 ## Core Experience
 
 ### Workout Library
@@ -191,45 +194,6 @@ FitLog includes a number of smaller details that make the overall experience fee
 
 Invalid routes and unavailable workout IDs are handled through a dedicated Not Found experience.
 
----
-
-## Project Structure
-
-```text
-src/
-├── app/
-│   ├── my-plan/
-│   │   ├── loading.tsx
-│   │   └── page.tsx
-│   │
-│   ├── workouts/
-│   │   └── [id]/
-│   │       ├── loading.tsx
-│   │       └── page.tsx
-│   │
-│   ├── error.tsx
-│   ├── globals.css
-│   ├── layout.tsx
-│   ├── not-found.tsx
-│   └── page.tsx
-│
-├── components/
-│   ├── home/
-│   ├── layout/
-│   ├── my-plan/
-│   └── workouts/
-│
-├── context/
-│   └── WorkoutContext.tsx
-│
-├── lib/
-│   └── api.ts
-│
-└── types/
-    └── workout.ts
-```
-
----
 
 ## Data Source
 
@@ -318,14 +282,11 @@ http://localhost:3000
 | **Tablet**  | Balanced multi-column interface              |
 | **Desktop** | Expanded workout grid and planning dashboard |
 
-Every major part of the application—including navigation, cards, workout details, tabs, statistics, actions, empty states, and footer—is responsive.
 
----
-
-<div align="center">
+<div>
 
 ### Train with intent. Log every set.
 
-[**Open FitLog →**](https://fitlog-fit.vercel.app)
+[**Open FitLog →**](https://fitlog-seven-beta.vercel.app/)
 
 </div>
